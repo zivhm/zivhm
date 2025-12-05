@@ -67,19 +67,23 @@
 <div align="center">
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=zivhm&show_icons=true&theme=dark&count_private=true&hide_border=true" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true&border_radius=10" alt="GitHub Streak" />
+</a>
+
+<br><br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=000000&color=FFFFFF&line=FF8C00&point=FF4500&hide_border=true" alt="GitHub Activity Graph" style="width: 45%;" />
+
+<br><br>
+
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img src="https://github-readme-stats.vercel.app/api?username=zivhm&show_icons=true&theme=dark&count_private=true&hide_border=true&border_radius=10" alt="GitHub Stats" />
 </a>
 
 <br><br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true" alt="GitHub Streak" />
-</a>
-
-<br><br>
-
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zivhm&layout=compact&theme=dark&count_private=true&hide_border=true" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zivhm&layout=compact&theme=dark&count_private=true&hide_border=true&border_radius=10" alt="Top Languages" />
 </a>
 
 </div>
