@@ -4,7 +4,7 @@
 
 ### I enjoy learning new technologies and playing around with code.
 
-**DevOps Engineer | Kubernetes & Container Orchestration | Python Developer**
+**DevOps Engineer | Python Developer**
 
 ---
 
@@ -26,8 +26,10 @@
 
 **AI & Data Systems**<br>
 <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain"/>
-<img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
 <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face"/>
+<img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
+<img src="https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude"/>
+<img src="https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=google%20gemini&logoColor=white" alt="Gemini"/>
 <img src="https://img.shields.io/badge/ChromaDB-cc5500?style=for-the-badge&logo=chromadb&logoColor=white" alt="ChromaDB"/>
 
 <br>
@@ -37,6 +39,7 @@
 <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash"/>
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"/>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/>
 
 <br>
 
@@ -64,17 +67,19 @@
 <div align="center">
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=zivhm&show_icons=true&theme=dark&count_private=true" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=zivhm&show_icons=true&theme=dark&count_private=true&hide_border=true" alt="GitHub Stats" />
 </a>
 
+<br><br>
+
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true" alt="GitHub Streak" />
 </a>
 
-<br>
+<br><br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zivhm&layout=compact&theme=dark&count_private=true" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zivhm&layout=compact&theme=dark&count_private=true&hide_border=true" alt="Top Languages" />
 </a>
 
 </div>
@@ -149,4 +154,3 @@
 </td>
 </tr>
 </table>
-
