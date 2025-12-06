@@ -76,18 +76,6 @@
 
 <br><br>
 
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=zivhm&show_icons=true&theme=dark&count_private=true&hide_border=true&border_radius=10" alt="GitHub Stats" />
-</a>
-
-<br><br>
-
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zivhm&layout=compact&theme=dark&count_private=true&hide_border=true&border_radius=10" alt="Top Languages" />
-</a>
-
-</div>
-
 ---
 
 ## 🎯 Technical Expertise
