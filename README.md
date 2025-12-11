@@ -2,7 +2,7 @@
 
 # Hi, im zivhm 🙌
 
-### I enjoy learning new technologies and playing around with code.
+##### I enjoy learning new technologies and playing around with code.
 
 **DevOps Engineer | Python Developer**
 
