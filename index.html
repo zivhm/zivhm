@@ -3,312 +3,826 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zivhm - DevOps Engineer & Python Developer</title>
+    <title>zivhm | DevOps Engineer & Python Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        :root {
+            --primary: #00f5ff;
+            --secondary: #ff00ff;
+            --accent: #ffff00;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: #e2e8f0;
             line-height: 1.6;
-            color: #c9d1d9;
-            background-color: #0d1117;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            overflow-x: hidden;
         }
-        
-        h1 {
-            color: #e6edf3;
-            font-size: 2em;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 10px;
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 255, 0, 0.05) 0%, transparent 70%),
+                var(--darker);
         }
-        
-        h2 {
-            color: #e6edf3;
-            font-size: 1.5em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 8px;
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
         }
-        
-        h3 {
-            color: #7d8590;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
-        
-        p {
-            margin-bottom: 15px;
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5%;
+            background: rgba(5, 5, 8, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .intro {
-            font-size: 1.1em;
-            color: #8b949e;
-            margin-bottom: 20px;
-        }
-        
-        .role {
-            background: linear-gradient(90deg, #58a6ff, #a371f7);
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-bottom: 30px;
+            background-clip: text;
         }
-        
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.3s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--darker);
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 60px rgba(0, 245, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card);
+            color: #fff;
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tech Stack Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 245, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .tech-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tech-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tech-card h3::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
         .badge-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0 25px 0;
+            gap: 0.5rem;
         }
-        
+
         .badge {
             display: inline-flex;
             align-items: center;
-            padding: 5px 10px;
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            font-size: 0.85em;
-            color: #c9d1d9;
-            text-decoration: none;
-            transition: all 0.2s;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
         }
-        
+
         .badge:hover {
-            background-color: #30363d;
-            border-color: #8b949e;
+            background: rgba(0, 245, 255, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: scale(1.05);
         }
-        
-        .section-title {
-            color: #58a6ff;
-            font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 10px;
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(180deg, transparent, rgba(0, 245, 255, 0.03), transparent);
         }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            color: #c9d1d9;
-        }
-        
-        li code {
-            background-color: rgba(110, 118, 129, 0.4);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'SFMono-Regular', Consolas, monospace;
-            font-size: 0.9em;
-            color: #e6edf3;
-        }
-        
+
         .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        
-        .stats-container img {
+
+        .stats-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 245, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .stats-card img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
         }
-        
-        a {
-            color: #58a6ff;
-            text-decoration: none;
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
-        a:hover {
-            text-decoration: underline;
+
+        .expertise-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
         }
-        
-        .github-link {
-            display: inline-flex;
+
+        .expertise-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .expertise-card:hover::after {
+            opacity: 1;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            display: flex;
             align-items: center;
-            gap: 8px;
-            margin-top: 40px;
-            padding: 12px 20px;
-            background-color: #238636;
-            color: white;
-            border-radius: 6px;
+            gap: 0.75rem;
+        }
+
+        .expertise-card h3 .icon {
+            font-size: 1.5rem;
+        }
+
+        .expertise-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expertise-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .expertise-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
             font-weight: 600;
-            transition: background-color 0.2s;
         }
-        
-        .github-link:hover {
-            background-color: #2ea043;
-            text-decoration: none;
+
+        .expertise-card code {
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
         }
-        
+
+        /* Footer */
         footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #30363d;
+            padding: 4rem 5%;
             text-align: center;
-            color: #8b949e;
-            font-size: 0.9em;
+            border-top: 1px solid var(--border);
+            background: var(--dark);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(0, 245, 255, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-text {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer-text span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tech-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-card img {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Hi, I'm zivhm 🙌</h1>
-    
-    <p class="intro">I enjoy learning new technologies and playing around with code.</p>
-    
-    <p class="role">DevOps Engineer | Python Developer</p>
-    
-    <h2>🛠️ Tech Stack</h2>
-    
-    <p class="section-title">Container Orchestration & IaC</p>
-    <div class="badge-container">
-        <span class="badge">Docker</span>
-        <span class="badge">Kubernetes</span>
-        <span class="badge">Helm</span>
-        <span class="badge">OpenShift</span>
-        <span class="badge">Terraform</span>
-        <span class="badge">Ansible</span>
-    </div>
-    
-    <p class="section-title">AI & Data Systems</p>
-    <div class="badge-container">
-        <span class="badge">LangChain</span>
-        <span class="badge">Hugging Face</span>
-        <span class="badge">OpenAI</span>
-        <span class="badge">Claude</span>
-        <span class="badge">Gemini</span>
-        <span class="badge">ChromaDB</span>
-    </div>
-    
-    <p class="section-title">Languages & Frameworks</p>
-    <div class="badge-container">
-        <span class="badge">Python</span>
-        <span class="badge">Bash</span>
-        <span class="badge">Flask</span>
-        <span class="badge">FastAPI</span>
-        <span class="badge">Streamlit</span>
-    </div>
-    
-    <p class="section-title">Infrastructure, Monitoring & Tools</p>
-    <div class="badge-container">
-        <span class="badge">Linux</span>
-        <span class="badge">Nginx</span>
-        <span class="badge">Prometheus</span>
-        <span class="badge">Grafana</span>
-        <span class="badge">Git</span>
-    </div>
-    
-    <p class="section-title">Cloud Platforms</p>
-    <div class="badge-container">
-        <span class="badge">AWS</span>
-        <span class="badge">GCP</span>
-    </div>
-    
-    <h2>📊 GitHub Stats</h2>
-    <div class="stats-container">
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true&border_radius=10" alt="GitHub Streak">
-        <img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=ff4500&hide_border=true" alt="GitHub Activity Graph">
-    </div>
-    
-    <h2>🎯 Technical Expertise</h2>
-    
-    <h3>☸️ Container Orchestration & Kubernetes</h3>
-    <ul>
-        <li>Multi-node cluster setup with <code>kubeadm</code> and <code>kube-vip</code> for HA</li>
-        <li><code>OpenShift</code> administration including networking, storage, security, and CI/CD pipelines</li>
-    </ul>
-    
-    <h3>🏗️ Infrastructure as Code & Cloud</h3>
-    <ul>
-        <li><code>Terraform</code> for AWS resource provisioning (EC2, VPC, Security Groups, Elastic IPs)</li>
-        <li><code>Ansible</code> playbook automation for server configuration and zero-touch deployments</li>
-        <li><strong>One-command</strong> deployment pipelines orchestrating IaC tools end-to-end</li>
-        <li>AWS infrastructure design with security groups, IAM, and monitoring</li>
-        <li>GCP experience with cloud-native deployments with LLM integrations</li>
-    </ul>
-    
-    <h3>🐍 Python Development</h3>
-    <ul>
-        <li>Web applications with <code>Flask</code> and <code>FastAPI</code> frameworks</li>
-        <li>RESTful API design with proper authentication and rate limiting</li>
-        <li>Concurrent programming with <code>ThreadPoolExecutor</code> for parallel processing</li>
-        <li>Event-driven architectures for real-time data processing</li>
-        <li><code>LangChain</code> integration for AI/LLM applications with vector databases</li>
-    </ul>
-    
-    <h3>🤖 AI & Data Systems</h3>
-    <ul>
-        <li>RAG (Retrieval-Augmented Generation) architecture implementation</li>
-        <li>Vector database integration (<code>ChromaDB</code>) with semantic search</li>
-        <li>Embedding generation and document chunking strategies</li>
-        <li>Multi-exchange API integration for market data</li>
-        <li>Real-time WebSocket data pipelines</li>
-    </ul>
-    
-    <h3>🔧 DevOps & CI/CD</h3>
-    <ul>
-        <li>GitHub Actions pipelines with automated testing and linting</li>
-        <li><code>Docker</code> containerization with multi-stage builds and optimization</li>
-        <li>Automated Docker Hub publishing workflows</li>
-        <li>Pre-commit hooks for code quality (<code>black</code>, <code>flake8</code>, <code>pylint</code>, <code>isort</code>)</li>
-        <li>Blue-green deployment strategies</li>
-    </ul>
-    
-    <h3>🌐 Web Infrastructure</h3>
-    <ul>
-        <li><code>Nginx</code> reverse proxy configuration with SSL termination</li>
-        <li>Let's Encrypt certificate automation with <code>Certbot</code></li>
-        <li>OAuth2 authentication flows and session management</li>
-    </ul>
-    
-    <h3>📊 Monitoring & Observability</h3>
-    <ul>
-        <li><code>Prometheus</code> metrics collection and alerting rules</li>
-        <li><code>Grafana</code> dashboard creation for system and application metrics</li>
-        <li>Log aggregation and analysis</li>
-        <li>Performance optimization based on monitoring data</li>
-    </ul>
-    
-    <h3>🔐 Security & Linux Administration</h3>
-    <ul>
-        <li>SSH key management and hardening</li>
-        <li><code>Ansible Vault</code> for secrets management</li>
-        <li>Security group and firewall rule configuration</li>
-        <li>System administration on Ubuntu/RHEL environments</li>
-    </ul>
-    
-    <h3>📝 Additional Skills</h3>
-    <ul>
-        <li><code>Bash</code> scripting for automation and system tasks</li>
-        <li>Git workflows and version control best practices</li>
-        <li>Technical documentation and knowledge base creation</li>
-        <li>Debugging complex distributed systems</li>
-        <li>Performance tuning and optimization</li>
-    </ul>
-    
-    <a href="https://github.com/zivhm" class="github-link">
-        <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        View on GitHub
-    </a>
-    
+    <div class="bg-animation"></div>
+
+    <nav>
+        <div class="logo">&lt;zivhm/&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">Available for opportunities</div>
+            <h1>Hi, I'm <span>zivhm</span> 🙌</h1>
+            <p class="hero-subtitle">I enjoy learning new technologies and playing around with code</p>
+            <p class="hero-role">DevOps Engineer | Python Developer</p>
+            <div class="hero-buttons">
+                <a href="#expertise" class="btn btn-primary">View My Work</a>
+                <a href="https://github.com/zivhm" class="btn btn-secondary" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech">
+        <div class="section-header reveal">
+            <h2>🛠️ Tech Stack</h2>
+            <p>Technologies and tools I work with on a daily basis</p>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-card reveal">
+                <h3>Container Orchestration & IaC</h3>
+                <div class="badge-container">
+                    <span class="badge">Docker</span>
+                    <span class="badge">Kubernetes</span>
+                    <span class="badge">Helm</span>
+                    <span class="badge">OpenShift</span>
+                    <span class="badge">Terraform</span>
+                    <span class="badge">Ansible</span>
+                </div>
+            </div>
+            <div class="tech-card reveal">
+                <h3>AI & Data Systems</h3>
+                <div class="badge-container">
+                    <span class="badge">LangChain</span>
+                    <span class="badge">Hugging Face</span>
+                    <span class="badge">OpenAI</span>
+                    <span class="badge">Claude</span>
+                    <span class="badge">Gemini</span>
+                    <span class="badge">ChromaDB</span>
+                </div>
+            </div>
+            <div class="tech-card reveal">
+                <h3>Languages & Frameworks</h3>
+                <div class="badge-container">
+                    <span class="badge">Python</span>
+                    <span class="badge">Bash</span>
+                    <span class="badge">Flask</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Streamlit</span>
+                </div>
+            </div>
+            <div class="tech-card reveal">
+                <h3>Infrastructure & Tools</h3>
+                <div class="badge-container">
+                    <span class="badge">Linux</span>
+                    <span class="badge">Nginx</span>
+                    <span class="badge">Prometheus</span>
+                    <span class="badge">Grafana</span>
+                    <span class="badge">Git</span>
+                </div>
+            </div>
+            <div class="tech-card reveal">
+                <h3>Cloud Platforms</h3>
+                <div class="badge-container">
+                    <span class="badge">AWS</span>
+                    <span class="badge">GCP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="stats-section">
+        <div class="section-header reveal">
+            <h2>📊 GitHub Stats</h2>
+            <p>My contribution activity and coding streak</p>
+        </div>
+        <div class="stats-container">
+            <div class="stats-card reveal">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true&border_radius=10&background=0a0a0f&ring=00f5ff&fire=ff00ff&currStreakLabel=00f5ff" alt="GitHub Streak">
+            </div>
+            <div class="stats-card reveal">
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=0a0a0f&color=c9d1d9&line=00f5ff&point=ff00ff&hide_border=true&area=true&area_color=00f5ff" alt="GitHub Activity Graph">
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <div class="section-header reveal">
+            <h2>🎯 Technical Expertise</h2>
+            <p>Deep dive into my professional skills and experience</p>
+        </div>
+        <div class="expertise-grid">
+            <div class="expertise-card reveal">
+                <h3><span class="icon">☸️</span> Container Orchestration</h3>
+                <ul>
+                    <li>Multi-node cluster setup with <code>kubeadm</code> and <code>kube-vip</code> for HA</li>
+                    <li><code>OpenShift</code> administration including networking, storage, security, and CI/CD pipelines</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <h3><span class="icon">🏗️</span> Infrastructure as Code</h3>
+                <ul>
+                    <li><code>Terraform</code> for AWS resource provisioning (EC2, VPC, Security Groups, Elastic IPs)</li>
+                    <li><code>Ansible</code> playbook automation for server configuration</li>
+                    <li>One-command deployment pipelines</li>
+                    <li>AWS & GCP cloud-native deployments</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <h3><span class="icon">🐍</span> Python Development</h3>
+                <ul>
+                    <li>Web applications with <code>Flask</code> and <code>FastAPI</code></li>
+                    <li>RESTful API design with auth and rate limiting</li>
+                    <li>Concurrent programming with <code>ThreadPoolExecutor</code></li>
+                    <li><code>LangChain</code> integration for AI/LLM apps</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <h3><span class="icon">🤖</span> AI & Data Systems</h3>
+                <ul>
+                    <li>RAG architecture implementation</li>
+                    <li>Vector database integration (<code>ChromaDB</code>)</li>
+                    <li>Embedding generation and document chunking</li>
+                    <li>Real-time WebSocket data pipelines</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <h3><span class="icon">🔧</span> DevOps & CI/CD</h3>
+                <ul>
+                    <li>GitHub Actions pipelines with automated testing</li>
+                    <li><code>Docker</code> containerization with multi-stage builds</li>
+                    <li>Automated Docker Hub publishing workflows</li>
+                    <li>Pre-commit hooks for code quality</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <h3><span class="icon">🌐</span> Web Infrastructure</h3>
+                <ul>
+                    <li><code>Nginx</code> reverse proxy configuration</li>
+                    <li>Let's Encrypt SSL automation with <code>Certbot</code></li>
+                    <li>OAuth2 authentication flows</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <h3><span class="icon">📊</span> Monitoring</h3>
+                <ul>
+                    <li><code>Prometheus</code> metrics and alerting</li>
+                    <li><code>Grafana</code> dashboard creation</li>
+                    <li>Log aggregation and analysis</li>
+                    <li>Performance optimization</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <h3><span class="icon">🔐</span> Security & Linux</h3>
+                <ul>
+                    <li>SSH key management and hardening</li>
+                    <li><code>Ansible Vault</code> for secrets</li>
+                    <li>Security groups and firewall rules</li>
+                    <li>Ubuntu/RHEL system administration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>Built with ❤️ by zivhm</p>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/zivhm" class="social-link" target="_blank" title="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer-text">Built with <span>❤️</span> by zivhm</p>
+        </div>
     </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(5, 5, 8, 0.95)';
+            } else {
+                nav.style.background = 'rgba(5, 5, 8, 0.8)';
+            }
+        });
+    </script>
 </body>
 </html>
