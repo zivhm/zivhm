@@ -39,32 +39,37 @@
             cursor: none;
         }
 
-        /* Custom Cursor */
+        /* Custom Cursor - Elegant minimal style */
         .custom-cursor {
             position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--accent-terracotta);
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid var(--text-primary);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.15s ease, background 0.15s ease;
+            transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
             mix-blend-mode: difference;
+            opacity: 0.6;
         }
 
         .custom-cursor.hover {
-            transform: scale(2);
-            background: rgba(193, 119, 103, 0.2);
+            transform: scale(1.5);
+            opacity: 1;
+            border-color: var(--accent-terracotta);
+            border-width: 2px;
         }
 
         .custom-cursor-dot {
             position: fixed;
-            width: 6px;
-            height: 6px;
-            background: var(--accent-terracotta);
+            width: 4px;
+            height: 4px;
+            background: var(--text-primary);
             border-radius: 50%;
             pointer-events: none;
             z-index: 10000;
+            mix-blend-mode: difference;
+            opacity: 0.8;
         }
 
         /* Film Grain Overlay */
@@ -1430,10 +1435,10 @@
             dotX += (mouseX - dotX) * 0.35;
             dotY += (mouseY - dotY) * 0.35;
 
-            cursor.style.left = cursorX - 10 + 'px';
-            cursor.style.top = cursorY - 10 + 'px';
-            cursorDot.style.left = dotX - 3 + 'px';
-            cursorDot.style.top = dotY - 3 + 'px';
+            cursor.style.left = cursorX - 16 + 'px';
+            cursor.style.top = cursorY - 16 + 'px';
+            cursorDot.style.left = dotX - 2 + 'px';
+            cursorDot.style.top = dotY - 2 + 'px';
 
             requestAnimationFrame(animateCursor);
         }
