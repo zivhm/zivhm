@@ -2,10 +2,11 @@
 
 # Hi, im zivhm 🙌
 
-##### I enjoy learning new technologies and playing around with code.
+**https://zivhm.github.io/zivhm**
 
 **DevOps Engineer | Python Developer**
 
+##### I enjoy learning new technologies and playing around with code.
 ---
 
 </div>
@@ -147,10 +148,4 @@
 </tr>
 </table>
 
----
 
-## 🌐 GitHub Pages Site
-
-This repository also hosts a GitHub Pages site at **https://zivhm.github.io/zivhm**
-
-Built with HTML5 & CSS3, featuring a dark theme design showcasing the same content.
