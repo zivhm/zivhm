@@ -325,39 +325,6 @@
             border-color: var(--accent-sage);
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 1s forwards;
-        }
-
-        .mouse {
-            width: 26px;
-            height: 40px;
-            border: 2px solid var(--border-subtle);
-            border-radius: 13px;
-            position: relative;
-        }
-
-        .mouse-wheel {
-            width: 4px;
-            height: 8px;
-            background: var(--accent-terracotta);
-            border-radius: 2px;
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scroll 2s infinite;
-        }
-
-        @keyframes scroll {
-            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
-        }
 
         @keyframes fadeInUp {
             from {
@@ -1108,11 +1075,6 @@
             <div class="hero-cta">
                 <a href="#expertise" class="btn btn-primary interactive">View My Work</a>
                 <a href="https://github.com/zivhm" class="btn btn-secondary interactive" target="_blank">GitHub Profile</a>
-            </div>
-            <div class="scroll-indicator">
-                <div class="mouse">
-                    <div class="mouse-wheel"></div>
-                </div>
             </div>
         </section>
 
