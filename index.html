@@ -39,37 +39,50 @@
             cursor: none;
         }
 
-        /* Custom Cursor - Elegant minimal style */
+        /* macOS Style Cursor */
         .custom-cursor {
             position: fixed;
-            width: 32px;
-            height: 32px;
-            border: 1.5px solid var(--text-primary);
-            border-radius: 50%;
+            width: 24px;
+            height: 24px;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
-            mix-blend-mode: difference;
-            opacity: 0.6;
+            transition: transform 0.15s ease;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+
+        .custom-cursor::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 12px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            transform: rotate(-25deg);
+            transform-origin: 0 50%;
+        }
+
+        .custom-cursor::after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            width: 0;
+            height: 0;
+            border-left: 13px solid rgba(0,0,0,0.2);
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            transform: rotate(-25deg);
+            transform-origin: 0 50%;
+            z-index: -1;
         }
 
         .custom-cursor.hover {
-            transform: scale(1.5);
-            opacity: 1;
-            border-color: var(--accent-terracotta);
-            border-width: 2px;
+            transform: scale(1.2);
         }
 
         .custom-cursor-dot {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: var(--text-primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            mix-blend-mode: difference;
-            opacity: 0.8;
+            display: none;
         }
 
         /* Film Grain Overlay */
@@ -1089,7 +1102,6 @@
 <body>
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
-    <div class="custom-cursor-dot"></div>
 
     <!-- Film Grain Overlay -->
     <div class="film-grain"></div>
@@ -1417,12 +1429,10 @@
             }, 2500);
         });
 
-        // Custom Cursor
+        // macOS Style Cursor
         const cursor = document.querySelector('.custom-cursor');
-        const cursorDot = document.querySelector('.custom-cursor-dot');
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
-        let dotX = 0, dotY = 0;
 
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
@@ -1430,15 +1440,13 @@
         });
 
         function animateCursor() {
-            cursorX += (mouseX - cursorX) * 0.15;
-            cursorY += (mouseY - cursorY) * 0.15;
-            dotX += (mouseX - dotX) * 0.35;
-            dotY += (mouseY - dotY) * 0.35;
+            // Quick, responsive following like macOS
+            cursorX += (mouseX - cursorX) * 0.35;
+            cursorY += (mouseY - cursorY) * 0.35;
 
-            cursor.style.left = cursorX - 16 + 'px';
-            cursor.style.top = cursorY - 16 + 'px';
-            cursorDot.style.left = dotX - 2 + 'px';
-            cursorDot.style.top = dotY - 2 + 'px';
+            // Position arrow tip at mouse position
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
 
             requestAnimationFrame(animateCursor);
         }
