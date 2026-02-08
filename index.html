@@ -10,7 +10,7 @@
 
     <style>
         :root {
-            --bg-dark: #1e293b;
+            --bg-dark: #000000;
             --accent-terracotta: #d4897a;
             --accent-sage: #9db5ad;
             --accent-sand: #e0b88a;
@@ -32,6 +32,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 500;
             background: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.6;
@@ -73,7 +74,7 @@
         }
 
         .console-container {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             border: 1px solid var(--border-subtle);
             border-radius: 8px;
             padding: 30px 40px;
@@ -107,10 +108,11 @@
             animation: typeIn 0.3s ease forwards;
         }
 
-        .console-line:nth-child(2) { animation-delay: 0.2s; }
-        .console-line:nth-child(3) { animation-delay: 0.5s; }
-        .console-line:nth-child(4) { animation-delay: 0.8s; }
-        .console-line:nth-child(5) { animation-delay: 1.1s; }
+        .console-line:nth-child(2) { animation-delay: 0.3s; }
+        .console-line:nth-child(3) { animation-delay: 0.7s; }
+        .console-line:nth-child(4) { animation-delay: 1.1s; }
+        .console-line:nth-child(5) { animation-delay: 1.5s; }
+        .console-line:nth-child(6) { animation-delay: 1.9s; }
 
         @keyframes typeIn {
             to { opacity: 1; }
@@ -141,7 +143,7 @@
         }
 
         nav.scrolled {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(20px);
             padding: 15px 5%;
             border-bottom: 1px solid var(--border-subtle);
@@ -239,7 +241,7 @@
 
         .hero-title {
             font-size: clamp(48px, 6vw, 80px);
-            font-weight: 800;
+            font-weight: 900;
             line-height: 1.1;
             margin-bottom: 20px;
             opacity: 0;
@@ -638,9 +640,14 @@
 
         /* Projects Section */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1.5rem;
+        }
+
+        .projects-grid .project-card {
+            width: calc(33.333% - 1rem);
         }
 
         .project-card {
@@ -977,8 +984,8 @@
                 min-width: auto;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .projects-grid .project-card {
+                width: 100%;
             }
 
             .project-meta {
@@ -1049,7 +1056,6 @@
             <ul class="nav-links">
                 <li><a href="#about">about</a></li>
                 <li><a href="#tech">tech</a></li>
-                <li><a href="#expertise">expertise</a></li>
                 <li><a href="#projects">projects</a></li>
                 <li><a href="#contact">contact</a></li>
             </ul>
@@ -1062,7 +1068,7 @@
         <section class="hero" id="home">
             <p class="hero-greeting">Hello, I'm</p>
             <h1 class="hero-title">
-                zivhm.<br>
+                zivhm<br>
                 <span class="highlight">DevOps Engineer.</span>
             </h1>
             <p class="hero-subtitle">
@@ -1073,7 +1079,7 @@
                 <span class="typing-cursor"></span>
             </p>
             <div class="hero-cta">
-                <a href="#expertise" class="btn btn-primary interactive">View My Work</a>
+                <a href="#projects" class="btn btn-primary interactive">View My Work</a>
                 <a href="https://github.com/zivhm" class="btn btn-secondary interactive" target="_blank">GitHub Profile</a>
             </div>
         </section>
@@ -1091,16 +1097,13 @@
             </div>
             <div class="about-content">
                 <p class="about-text">
-                    I'm a passionate <strong>DevOps Engineer</strong> and <strong>Python Developer</strong> 
-                    with expertise in building scalable infrastructure and automation systems. My journey 
-                    involves orchestrating containerized applications, implementing Infrastructure as Code, 
-                    and developing intelligent systems powered by AI.
+                    I'm a <strong>DevOps Engineer</strong> and <strong>Python Developer</strong>.
+                    I work with containers, infrastructure as code, and automation — and lately I've been
+                    getting into AI tooling.
                 </p>
                 <p class="about-text">
-                    I believe in <strong>clean code</strong>, <strong>reliable systems</strong>, and the 
-                    power of <strong>automation</strong>. Whether it's setting up a Kubernetes cluster, 
-                    designing CI/CD pipelines, or building AI-powered applications, I bring a blend of 
-                    technical depth and creative problem-solving to every project.
+                    I spend most of my time learning new technologies and hacking projects together.
+                    I like keeping systems simple and reliable.
                 </p>
             </div>
             <div class="code-block about-content" style="margin-top: 40px;">
@@ -1187,7 +1190,7 @@
 
             <div class="github-stats-container">
                 <div class="github-stats-card">
-                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=transparent&hide_border=true&border_radius=10&background=0f172a&ring=c17767&fire=d4a574&currStreakLabel=e2e8f0&sideLabels=8da399&dates=64748b" alt="GitHub Streak">
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=transparent&hide_border=true&border_radius=10&background=000000&ring=c17767&fire=d4a574&currStreakLabel=e2e8f0&sideLabels=8da399&dates=64748b" alt="GitHub Streak">
                 </div>
                 <div class="github-stats-card">
                     <img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=react&bg_color=0f172a&color=e2e8f0&line=c17767&point=d4a574&hide_border=true&area=true&area_color=c17767" alt="GitHub Activity Graph">
@@ -1195,73 +1198,11 @@
             </div>
         </section>
 
-        <!-- Expertise Section -->
-        <section id="expertise">
-            <div class="section-header">
-                <span class="section-number">03</span>
-                <h2 class="section-title">
-                    <span class="bracket">&lt;</span>
-                    <span class="tag">Expertise</span>
-                    <span class="bracket">/&gt;</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <h3><span class="icon">☸️</span> Container Orchestration</h3>
-                    <ul>
-                        <li>Multi-node cluster setup with <code>kubeadm</code> and <code>kube-vip</code> for HA</li>
-                        <li><code>OpenShift</code> administration including networking, storage, security</li>
-                        <li>Helm chart development and deployment strategies</li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <h3><span class="icon">🏗️</span> Infrastructure as Code</h3>
-                    <ul>
-                        <li><code>Terraform</code> for AWS resource provisioning (EC2, VPC, Security Groups)</li>
-                        <li><code>Ansible</code> playbook automation for server configuration</li>
-                        <li>One-command deployment pipelines</li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <h3><span class="icon">🐍</span> Python Development</h3>
-                    <ul>
-                        <li>Web applications with <code>Flask</code> and <code>FastAPI</code></li>
-                        <li>RESTful API design with authentication and rate limiting</li>
-                        <li>Concurrent programming with <code>ThreadPoolExecutor</code></li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <h3><span class="icon">🤖</span> AI & Data Systems</h3>
-                    <ul>
-                        <li>RAG architecture implementation</li>
-                        <li>Vector database integration (<code>ChromaDB</code>)</li>
-                        <li>Embedding generation and document chunking</li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <h3><span class="icon">🔧</span> DevOps & CI/CD</h3>
-                    <ul>
-                        <li>GitHub Actions pipelines with automated testing</li>
-                        <li><code>Docker</code> containerization with multi-stage builds</li>
-                        <li>Automated Docker Hub publishing workflows</li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <h3><span class="icon">🔐</span> Security & Linux</h3>
-                    <ul>
-                        <li>SSH key management and hardening</li>
-                        <li><code>Ansible Vault</code> for secrets management</li>
-                        <li>Security groups and firewall rules</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
         <!-- Projects Section -->
         <section id="projects">
             <div class="section-header">
-                <span class="section-number">04</span>
+                <span class="section-number">03</span>
                 <h2 class="section-title">
                     <span class="bracket">&lt;</span>
                     <span class="tag">Projects</span>
@@ -1280,7 +1221,7 @@
         <!-- Contact Section -->
         <section id="contact">
             <div class="section-header">
-                <span class="section-number">05</span>
+                <span class="section-number">04</span>
                 <h2 class="section-title">
                     <span class="bracket">&lt;</span>
                     <span class="tag">Contact</span>
@@ -1289,10 +1230,9 @@
                 <div class="section-line"></div>
             </div>
             <div class="contact-content">
-                <h3 class="contact-title">Let's Build Together</h3>
+                <h3 class="contact-title">Get In Touch</h3>
                 <p class="contact-subtitle">
-                    Have a project in mind or looking for a DevOps engineer to join your team? 
-                    I'm always open to discussing new opportunities and challenging infrastructure problems.
+                    If you want to work together or just talk shop, reach out.
                 </p>
                 <div class="contact-links">
                     <a href="https://github.com/zivhm" class="contact-link interactive" target="_blank">
@@ -1316,7 +1256,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&lt;Designed & Built by zivhm /&gt;</p>
+            <p>&lt;zivhm /&gt;</p>
             <div class="footer-links">
                 <a href="https://github.com/zivhm" target="_blank">GitHub</a>
                 <a href="#home">Home</a>
@@ -1521,15 +1461,28 @@
                 const repos = await response.json();
                 
                 const targetRepos = [
-                    'zivhm', 'agent-skills', 'openclaw-zapper-api', 'pysystemtrade',
-                    'MAHORAGA', 'cryexc-backend', 'forky', 
-                    'generative-ai-for-beginners', 'opentelemetry-demo'
+                    'agent-skills', 'hyper-suite', 'cryexc-backend-extended',
+                    'random-book-store-app-Openshift-deployment',
+                    'awesome-devops', 'book_summarization', 'RAG_Techniques'
                 ];
                 
                 const filteredRepos = repos.filter(repo => targetRepos.includes(repo.name));
-                filteredRepos.sort((a, b) => targetRepos.indexOf(a.name) - targetRepos.indexOf(b.name));
-                
-                if (filteredRepos.length === 0) {
+                const foundNames = filteredRepos.map(r => r.name);
+                const missingRepos = targetRepos.filter(name => !foundNames.includes(name)).map(name => ({
+                    name,
+                    html_url: `https://github.com/zivhm/${name}`,
+                    description: null,
+                    language: null,
+                    fork: false,
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    updated_at: null,
+                    _private: true
+                }));
+                const allRepos = [...filteredRepos, ...missingRepos];
+                allRepos.sort((a, b) => targetRepos.indexOf(a.name) - targetRepos.indexOf(b.name));
+
+                if (allRepos.length === 0) {
                     projectsGrid.innerHTML = '<div class="projects-error">No repositories found.</div>';
                     return;
                 }
@@ -1541,12 +1494,12 @@
                     'C': '#555555', 'Shell': '#89e051', 'Vue': '#41b883'
                 };
                 
-                const reposHTML = filteredRepos.map(repo => {
+                const reposHTML = allRepos.map(repo => {
                     const languageColor = repo.language ? (languageColors[repo.language] || '#c17767') : '#64748b';
                     const description = repo.description || 'No description available';
-                    const updatedDate = new Date(repo.updated_at).toLocaleDateString('en-US', {
+                    const updatedDate = repo.updated_at ? new Date(repo.updated_at).toLocaleDateString('en-US', {
                         year: 'numeric', month: 'short', day: 'numeric'
-                    });
+                    }) : '';
                     
                     return `
                         <div class="project-card">
@@ -1557,6 +1510,7 @@
                                     </svg>
                                     ${repo.name}
                                 </a>
+                                ${repo._private ? '<span class="fork-badge" style="background:rgba(157,181,173,0.1);color:var(--accent-sage);border-color:rgba(157,181,173,0.3);">PRIVATE</span>' : ''}
                                 ${repo.fork ? '<span class="fork-badge">FORK</span>' : ''}
                             </div>
                             <p class="project-description">${description}</p>
