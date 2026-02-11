@@ -6,21 +6,9 @@
 
 **DevOps Engineer | Developer**
 
-<div align="center">
-
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true&border_radius=10" alt="GitHub Streak" />
-</a>
-
-<br>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=000000&color=FFFFFF&line=FF8C00&point=FF4500&hide_border=true" alt="GitHub Activity Graph" style="width: 45%;" />
-
-<br><br>
+</div>
 
 ---
-
-</div>
 
 ## 🛠️ Tech Stack
 
@@ -73,6 +61,22 @@
 <br>
 
 ---
+
+<div align="center">
+
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true&border_radius=10" alt="GitHub Streak" />
+</a>
+
+<br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=000000&color=FFFFFF&line=FF8C00&point=FF4500&hide_border=true" alt="GitHub Activity Graph" style="width: 45%;" />
+
+<br><br>
+
+---
+
+</div>
 
 ## 🎯 Technical Expertise
 
@@ -142,5 +146,3 @@
 </td>
 </tr>
 </table>
-
-
