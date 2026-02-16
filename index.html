@@ -1380,13 +1380,23 @@
                 const customDescriptionSuffixes = {
                     yacb: 'inspired by openclaw'
                 };
+
+                const temporaryDescriptions = {
+                    'agent-skills': 'Reusable automation skills and workflows for Codex-based agents.',
+                    'hyper-suite': 'Comprehensive Hyperliquid trading platform with bot creation, monitoring, paper trading, and live trading.',
+                    'cryexc-backend-extended': 'Extended backend for crypto exchange integrations and trading automation.',
+                    'random-book-store-app-Openshift-deployment': 'Random Book Store app with OpenShift deployment workflow.',
+                    'awesome-devops': 'Curated DevOps notes, patterns, and practical tooling references.',
+                    'book_summarization': 'Tool for summarizing books/text to PDF using LLMs.',
+                    'RAG_Techniques': 'Collection of RAG implementation techniques, patterns, and experiments.'
+                };
                 
                 const reposHTML = allRepos.map(repo => {
                     const languageColor = repo.language ? (languageColors[repo.language] || '#c17767') : '#64748b';
-                    const baseDescription = repo.description || 'No description available';
+                    const baseDescription = repo.description || temporaryDescriptions[repo.name] || 'No description available';
                     const suffix = customDescriptionSuffixes[repo.name];
                     const description = suffix
-                        ? (repo.description ? `${repo.description} | ${suffix}` : suffix)
+                        ? (repo.description ? `${repo.description} ${suffix}` : suffix)
                         : baseDescription;
                     const updatedDate = repo.updated_at ? new Date(repo.updated_at).toLocaleDateString('en-US', {
                         year: 'numeric', month: 'short', day: 'numeric'
