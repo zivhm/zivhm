@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0,0f172a,0d9488&height=180&section=header&text=zivhm&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=DevOps%20%C2%B7%20Python%20%C2%B7%20AI%20Systems&descAlignY=58&descSize=20&descColor=5eead4" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0,0f172a,0d9488&height=180&text=zivhm&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=45&desc=DevOps%20%C2%B7%20Python%20%C2%B7%20AI%20Systems&descAlignY=65&descSize=20&descColor=5eead4" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&pause=1200&color=14B8A6&center=true&vCenter=true&width=435&lines=Building+infrastructure+that+scales;Automating+everything+possible;Shipping+AI-powered+systems)](https://git.io/typing-svg)
 
@@ -12,7 +12,7 @@
 
 ---
 
-<img src="https://img.shields.io/badge/Stack-0d9488?style=for-the-badge" />
+<div align="center"><img src="https://img.shields.io/badge/Stack-0d9488?style=for-the-badge" /></div>
 
 <div align="center">
 
@@ -64,7 +64,7 @@
 
 ---
 
-<img src="https://img.shields.io/badge/Stats-0d9488?style=for-the-badge" />
+<div align="center"><img src="https://img.shields.io/badge/Stats-0d9488?style=for-the-badge" /></div>
 
 <div align="center">
 
@@ -82,7 +82,7 @@
 
 ---
 
-<img src="https://img.shields.io/badge/What_I_Build-0d9488?style=for-the-badge" />
+<div align="center"><img src="https://img.shields.io/badge/What_I_Build-0d9488?style=for-the-badge" /></div>
 
 <table>
 <tr>
