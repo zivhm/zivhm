@@ -1,17 +1,18 @@
 <div align="center">
 
-# Hi, im zivhm 🙌
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0,0f172a,0d9488&height=180&section=header&text=zivhm&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=DevOps%20%C2%B7%20Python%20%C2%B7%20AI%20Systems&descAlignY=58&descSize=20&descColor=5eead4" />
 
-**https://zivhm.github.io/zivhm**
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&pause=1200&color=14B8A6&center=true&vCenter=true&width=435&lines=Building+infrastructure+that+scales;Automating+everything+possible;Shipping+AI-powered+systems)](https://git.io/typing-svg)
 
-**DevOps Engineer | Python Developer**
-
-##### I enjoy learning new technologies and playing around with code.
----
+**[zivhm.github.io/zivhm](https://zivhm.github.io/zivhm)**
 
 </div>
 
-## 🛠️ Tech Stack
+<br>
+
+---
+
+<img src="https://img.shields.io/badge/Stack-0d9488?style=for-the-badge" />
 
 <div align="center">
 
@@ -44,7 +45,7 @@
 
 <br>
 
-**Infrastructure, Monitoring & Tools**<br>
+**Infrastructure & Monitoring**<br>
 <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
 <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx"/>
 <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus"/>
@@ -53,7 +54,7 @@
 
 <br>
 
-**Cloud Platforms**<br>
+**Cloud**<br>
 <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS"/>
 <img src="https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="GCP"/>
 
@@ -63,7 +64,7 @@
 
 ---
 
-## 📊 GitHub Stats
+<img src="https://img.shields.io/badge/Stats-0d9488?style=for-the-badge" />
 
 <div align="center">
 
@@ -73,79 +74,79 @@
 
 <br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=000000&color=FFFFFF&line=FF8C00&point=FF4500&hide_border=true" alt="GitHub Activity Graph" style="width: 45%;" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=000000&color=FFFFFF&line=0d9488&point=5eead4&hide_border=true" alt="GitHub Activity Graph" style="width: 45%;" />
 
-<br><br>
+</div>
+
+<br>
 
 ---
 
-## 🎯 Technical Expertise
+<img src="https://img.shields.io/badge/What_I_Build-0d9488?style=for-the-badge" />
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### ☸️ **Container Orchestration & Kubernetes**
+### ☸️ Kubernetes & Orchestration
 - Multi-node cluster setup with `kubeadm` and `kube-vip` for HA
-- `OpenShift` administration including networking, storage, security, and CI/CD pipelines
+- `OpenShift` administration — networking, storage, security, CI/CD
 
-### 🏗️ **Infrastructure as Code & Cloud**
-- `Terraform` for AWS resource provisioning (EC2, VPC, Security Groups, Elastic IPs)
-- `Ansible` playbook automation for server configuration and zero-touch deployments
-- **One-command** deployment pipelines orchestrating IaC tools end-to-end
-- AWS infrastructure design with security groups, IAM, and monitoring
-- GCP experience with cloud-native deployments with LLM integrations
+### 🏗️ Infrastructure as Code
+- `Terraform` for AWS (EC2, VPC, Security Groups, Elastic IPs)
+- `Ansible` playbook automation for zero-touch deployments
+- **One-command** deployment pipelines orchestrating IaC end-to-end
+- GCP deployments with LLM integrations
 
-### 🐍 **Python Development**
-- Web applications with `Flask` and `FastAPI` frameworks
-- RESTful API design with proper authentication and rate limiting
-- Concurrent programming with `ThreadPoolExecutor` for parallel processing
-- Event-driven architectures for real-time data processing
-- `LangChain` integration for AI/LLM applications with vector databases
+### 🐍 Python Development
+- Web apps with `Flask` and `FastAPI`
+- RESTful APIs with auth and rate limiting
+- Concurrent processing with `ThreadPoolExecutor`
+- `LangChain` integration with vector databases
 
-### 🤖 **AI & Data Systems**
-- RAG (Retrieval-Augmented Generation) architecture implementation
-- Vector database integration (`ChromaDB`) with semantic search
-- Embedding generation and document chunking strategies
-- Multi-exchange API integration for market data
+### 🤖 AI & Data Systems
+- RAG architecture with `ChromaDB` and semantic search
+- Embedding pipelines and document chunking strategies
+- Multi-exchange market data APIs
 - Real-time WebSocket data pipelines
 
 </td>
 <td width="50%" valign="top">
 
-### 🔧 **DevOps & CI/CD**
-- GitHub Actions pipelines with automated testing and linting
-- `Docker` containerization with multi-stage builds and optimization
-- Automated Docker Hub publishing workflows
-- Pre-commit hooks for code quality (`black`, `flake8`, `pylint`, `isort`)
+### 🔧 DevOps & CI/CD
+- GitHub Actions with automated testing and linting
+- `Docker` multi-stage builds and optimization
+- Pre-commit hooks (`black`, `flake8`, `pylint`, `isort`)
 - Blue-green deployment strategies
 
-### 🌐 **Web Infrastructure**
-- `Nginx` reverse proxy configuration with SSL termination
-- Let's Encrypt certificate automation with `Certbot`
-- OAuth2 authentication flows and session management
+### 🌐 Web Infrastructure
+- `Nginx` reverse proxy with SSL termination
+- Let's Encrypt automation with `Certbot`
+- OAuth2 flows and session management
 
-### 📊 **Monitoring & Observability**
-- `Prometheus` metrics collection and alerting rules
-- `Grafana` dashboard creation for system and application metrics
-- Log aggregation and analysis
-- Performance optimization based on monitoring data
+### 📊 Observability
+- `Prometheus` metrics and alerting rules
+- `Grafana` dashboards for system and app metrics
+- Log aggregation and performance tuning
 
-### 🔐 **Security & Linux Administration**
-- SSH key management and hardening
-- `Ansible Vault` for secrets management
-- Security group and firewall rule configuration
-- System administration on Ubuntu/RHEL environments
+### 🔐 Security & Linux
+- SSH hardening and key management
+- `Ansible Vault` for secrets
+- Firewall and security group configuration
+- Ubuntu/RHEL administration
 
-### 📝 **Additional Skills**
-- `Bash` scripting for automation and system tasks
-- Git workflows and version control best practices
-- Technical documentation and knowledge base creation
-- Debugging complex distributed systems
-- Performance tuning and optimization
+### 📝 Also
+- `Bash` scripting for automation
+- Git workflows and version control
+- Technical writing and documentation
+- Debugging distributed systems
 
 </td>
 </tr>
 </table>
 
+<br>
 
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0,0d9488,0f172a&height=100&section=footer" />
+</div>
