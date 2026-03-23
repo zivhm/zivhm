@@ -1343,7 +1343,7 @@
                 const repos = await response.json();
                 
                 const targetRepos = [
-                    'stagescout', 'yacb', 'hyper-stuite', 'agent-skills', 'random-book-store', 'book_summarization'
+                    'stagescout', 'yacb', 'hyper-stuite', 'agent-skills', 'random-book-store-app-Openshift-deployment', 'book_summarization'
                 ];
                 
                 const filteredRepos = repos.filter(repo => targetRepos.includes(repo.name));
@@ -1382,7 +1382,7 @@
                     'stagescout': 'Stage-based scouting and workflow toolkit.',
                     'agent-skills': 'Reusable automation skills and workflows for Codex-based agents.',
                     'hyper-stuite': 'Comprehensive Hyperliquid trading platform.',
-                    'random-book-store': 'Random Book Store app.',
+                    'random-book-store-app-Openshift-deployment': 'Random Book Store app.',
                     'book_summarization': 'Tool for summarizing books/text to PDF using LLMs.'
                 };
                 
