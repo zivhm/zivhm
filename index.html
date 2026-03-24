@@ -1346,7 +1346,22 @@
                     'stagescout', 'yacb', 'hyper-stuite', 'agent-skills', 'random-book-store-app-Openshift-deployment', 'book_summarization'
                 ];
                 
-                const filteredRepos = repos.filter(repo => targetRepos.includes(repo.name));
+                const staticRepos = [
+                    {
+                        name: 'stagescout',
+                        html_url: 'https://github.com/zivhm/stagescout',
+                        description: 'Stage-based scouting and workflow toolkit.',
+                        language: 'Python',
+                        stargazers_count: 0,
+                        forks_count: 0,
+                        updated_at: '2026-03-24',
+                        fork: false
+                    }
+                ];
+                
+                const allRepos = [...staticRepos, ...repos.filter(repo => targetRepos.includes(repo.name) && !staticRepos.find(s => s.name === repo.name))];
+                
+                const filteredRepos = allRepos.filter(repo => targetRepos.includes(repo.name));
                 filteredRepos.sort((a, b) => targetRepos.indexOf(a.name) - targetRepos.indexOf(b.name));
 
                 if (filteredRepos.length === 0) {
