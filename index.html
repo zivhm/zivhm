@@ -1347,22 +1347,9 @@
                 ];
                 
                 const filteredRepos = repos.filter(repo => targetRepos.includes(repo.name));
-                const foundNames = filteredRepos.map(r => r.name);
-                const missingRepos = targetRepos.filter(name => !foundNames.includes(name)).map(name => ({
-                    name,
-                    html_url: `https://github.com/zivhm/${name}`,
-                    description: null,
-                    language: null,
-                    fork: false,
-                    stargazers_count: 0,
-                    forks_count: 0,
-                    updated_at: null,
-                    _private: true
-                }));
-                const allRepos = [...filteredRepos, ...missingRepos];
-                allRepos.sort((a, b) => targetRepos.indexOf(a.name) - targetRepos.indexOf(b.name));
+                filteredRepos.sort((a, b) => targetRepos.indexOf(a.name) - targetRepos.indexOf(b.name));
 
-                if (allRepos.length === 0) {
+                if (filteredRepos.length === 0) {
                     projectsGrid.innerHTML = '<div class="projects-error">No repositories found.</div>';
                     return;
                 }
@@ -1378,7 +1365,7 @@
                     yacb: 'inspired by openclaw'
                 };
 
-                const temporaryDescriptions = {
+                const fallbackDescriptions = {
                     'stagescout': 'Stage-based scouting and workflow toolkit.',
                     'agent-skills': 'Reusable automation skills and workflows for Codex-based agents.',
                     'hyper-stuite': 'Comprehensive Hyperliquid trading platform.',
@@ -1386,9 +1373,9 @@
                     'book_summarization': 'Tool for summarizing books/text to PDF using LLMs.'
                 };
                 
-                const reposHTML = allRepos.map(repo => {
+                const reposHTML = filteredRepos.map(repo => {
                     const languageColor = repo.language ? (languageColors[repo.language] || '#c17767') : '#64748b';
-                    const baseDescription = repo.description || temporaryDescriptions[repo.name] || 'No description available';
+                    const baseDescription = repo.description || fallbackDescriptions[repo.name] || 'No description available';
                     const suffix = customDescriptionSuffixes[repo.name];
                     const description = suffix
                         ? (repo.description ? `${repo.description} ${suffix}` : suffix)
@@ -1406,7 +1393,6 @@
                                     </svg>
                                     ${repo.name}
                                 </a>
-                                ${repo._private ? '<span class="fork-badge" style="background:rgba(157,181,173,0.1);color:var(--accent-sage);border-color:rgba(157,181,173,0.3);">PRIVATE</span>' : ''}
                                 ${repo.fork ? '<span class="fork-badge">FORK</span>' : ''}
                             </div>
                             <p class="project-description">${description}</p>
