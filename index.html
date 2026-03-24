@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zivhm | DevOps Engineer & Python Developer</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000000'/%3E%3Cpath d='M17 22h9L14 32l12 10h-9L5 32zm21 20 12-10-12-10h9l12 10-12 10z' fill='%23d4897a'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -470,97 +471,6 @@
             transform: scale(1.05);
         }
 
-        /* Expertise Section */
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .expertise-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .expertise-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .expertise-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            padding: 2px;
-            background: linear-gradient(135deg, var(--accent-terracotta), var(--accent-sage), transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .expertise-card:hover::after {
-            opacity: 1;
-        }
-
-        .expertise-card h3 {
-            font-size: 1.1rem;
-            color: #fff;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .expertise-card h3 .icon {
-            font-size: 1.5rem;
-        }
-
-        .expertise-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .expertise-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        .expertise-card li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-terracotta);
-            font-weight: 600;
-        }
-
-        .expertise-card code {
-            background: rgba(193, 119, 103, 0.1);
-            color: var(--accent-terracotta);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85em;
-        }
-
         /* Projects Section */
         .projects-grid {
             display: flex;
@@ -969,7 +879,7 @@
             </p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary interactive">View My Work</a>
-                <a href="https://github.com/zivhm" class="btn btn-secondary interactive" target="_blank">GitHub Profile</a>
+                <a href="https://github.com/zivhm" class="btn btn-secondary interactive" target="_blank" rel="noreferrer">GitHub Profile</a>
             </div>
         </section>
 
@@ -1124,7 +1034,7 @@
                     If you want to work together or just talk shop, reach out.
                 </p>
                 <div class="contact-links">
-                    <a href="https://github.com/zivhm" class="contact-link interactive" target="_blank">
+                    <a href="https://github.com/zivhm" class="contact-link interactive" target="_blank" rel="noreferrer">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
@@ -1147,7 +1057,7 @@
         <div class="footer-content">
             <p>&lt;zivhm /&gt;</p>
             <div class="footer-links">
-                <a href="https://github.com/zivhm" target="_blank">GitHub</a>
+                <a href="https://github.com/zivhm" target="_blank" rel="noreferrer">GitHub</a>
                 <a href="#home">Home</a>
             </div>
         </div>
@@ -1311,7 +1221,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.section-header, .about-content, .tech-line-card, .expertise-card, .project-card, .github-stats-card, .contact-content').forEach(el => {
+        document.querySelectorAll('.section-header, .about-content, .tech-line-card, .project-card, .github-stats-card, .contact-content').forEach(el => {
             observer.observe(el);
         });
 
@@ -1332,39 +1242,28 @@
         // Fetch GitHub repositories
         async function fetchRepositories() {
             const projectsGrid = document.getElementById('projects-grid');
+            const featuredRepoKeys = [
+                'stagescout',
+                'yacb',
+                'agent-skills',
+                'random-book-store-app-openshift-deployment',
+                'book_summarization'
+            ];
             
             try {
-                const response = await fetch('https://api.github.com/users/zivhm/repos?type=public&sort=updated');
+                const response = await fetch('https://api.github.com/users/zivhm/repos?type=public&sort=updated&per_page=100');
                 
                 if (!response.ok) {
                     throw new Error('Failed to fetch repositories');
                 }
                 
                 const repos = await response.json();
-                
-                const targetRepos = [
-                    'stagescout', 'yacb', 'hyper-stuite', 'agent-skills', 'random-book-store-app-Openshift-deployment', 'book_summarization'
-                ];
-                
-                const staticRepos = [
-                    {
-                        name: 'stagescout',
-                        html_url: 'https://github.com/zivhm/stagescout',
-                        description: 'Stage-based scouting and workflow toolkit.',
-                        language: 'Python',
-                        stargazers_count: 0,
-                        forks_count: 0,
-                        updated_at: '2026-03-24',
-                        fork: false
-                    }
-                ];
-                
-                const allRepos = [...staticRepos, ...repos.filter(repo => targetRepos.includes(repo.name) && !staticRepos.find(s => s.name === repo.name))];
-                
-                const filteredRepos = allRepos.filter(repo => targetRepos.includes(repo.name));
-                filteredRepos.sort((a, b) => targetRepos.indexOf(a.name) - targetRepos.indexOf(b.name));
+                const repoLookup = new Map(repos.map(repo => [repo.name.toLowerCase(), repo]));
+                const featuredRepos = featuredRepoKeys
+                    .map(repoKey => repoLookup.get(repoKey))
+                    .filter(Boolean);
 
-                if (filteredRepos.length === 0) {
+                if (featuredRepos.length === 0) {
                     projectsGrid.innerHTML = '<div class="projects-error">No repositories found.</div>';
                     return;
                 }
@@ -1376,25 +1275,9 @@
                     'C': '#555555', 'Shell': '#89e051', 'Vue': '#41b883'
                 };
 
-                const customDescriptionSuffixes = {
-                    yacb: 'inspired by openclaw'
-                };
-
-                const fallbackDescriptions = {
-                    'stagescout': 'Stage-based scouting and workflow toolkit.',
-                    'agent-skills': 'Reusable automation skills and workflows for Codex-based agents.',
-                    'hyper-stuite': 'Comprehensive Hyperliquid trading platform.',
-                    'random-book-store-app-Openshift-deployment': 'Random Book Store app.',
-                    'book_summarization': 'Tool for summarizing books/text to PDF using LLMs.'
-                };
-                
-                const reposHTML = filteredRepos.map(repo => {
+                const reposHTML = featuredRepos.map(repo => {
                     const languageColor = repo.language ? (languageColors[repo.language] || '#c17767') : '#64748b';
-                    const baseDescription = repo.description || fallbackDescriptions[repo.name] || 'No description available';
-                    const suffix = customDescriptionSuffixes[repo.name];
-                    const description = suffix
-                        ? (repo.description ? `${repo.description} ${suffix}` : suffix)
-                        : baseDescription;
+                    const description = repo.description?.trim() || 'No GitHub description provided yet.';
                     const updatedDate = repo.updated_at ? new Date(repo.updated_at).toLocaleDateString('en-US', {
                         year: 'numeric', month: 'short', day: 'numeric'
                     }) : '';
@@ -1402,7 +1285,7 @@
                     return `
                         <div class="project-card">
                             <div class="project-header">
-                                <a href="${repo.html_url}" target="_blank" class="project-name interactive">
+                                <a href="${repo.html_url}" target="_blank" rel="noreferrer" class="project-name interactive">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                     </svg>
@@ -1447,7 +1330,7 @@
                 projectsGrid.innerHTML = `
                     <div class="projects-error">
                         <p>Failed to load projects. Please try again later.</p>
-                        <a href="https://github.com/zivhm" target="_blank" class="btn btn-secondary interactive" style="margin-top: 1rem;">View on GitHub</a>
+                        <a href="https://github.com/zivhm" target="_blank" rel="noreferrer" class="btn btn-secondary interactive" style="margin-top: 1rem;">View on GitHub</a>
                     </div>
                 `;
             }
