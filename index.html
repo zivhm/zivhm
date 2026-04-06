@@ -1263,7 +1263,7 @@
                 const repos = await response.json();
                 const repoLookup = new Map(repos.map(repo => [repo.name.toLowerCase(), repo]));
                 const featuredRepos = featuredRepoKeys
-                    .map(repoKey => repoLookup.get(repoKey))
+                    .map(repoKey => repoLookup.get(repoKey.toLowerCase()))
                     .filter(Boolean);
 
                 if (featuredRepos.length === 0) {
