@@ -64,24 +64,6 @@
 
 ---
 
-<div align="center"><img src="https://img.shields.io/badge/Stats-0d9488?style=for-the-badge" /></div>
-
-<div align="center">
-
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zivhm&theme=dark&hide_border=true&border_radius=10" alt="GitHub Streak" />
-</a>
-
-<br><br>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=zivhm&theme=custom&bg_color=000000&color=FFFFFF&line=0d9488&point=5eead4&hide_border=true" alt="GitHub Activity Graph" style="width: 45%;" />
-
-</div>
-
-<br>
-
----
-
 <div align="center"><img src="https://img.shields.io/badge/What_I_Build-0d9488?style=for-the-badge" /></div>
 
 <table>
